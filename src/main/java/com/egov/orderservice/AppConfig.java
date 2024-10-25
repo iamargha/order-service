@@ -41,6 +41,26 @@ public class AppConfig {
                 .build();
     }
 
+    @Bean
+    public WebClient webClient_2(WebClient.Builder webClientBuilder)
+    {
+        /*
+        return webClientBuilder
+                .baseUrl("http://"+gateway_hostname+":"+gateway_portnumber+"/health-service/api/v1/gethealthstatus")
+                .filter(new LoggingWebClientFilter())
+                .build();
+                */
+        ServiceInstance instance = getServiceInstance("product-service");
+        String hostname = instance.getHost();
+        int port = instance.getPort();
+
+        return webClientBuilder
+                .baseUrl("http://"+hostname+":"+port+"/api/products")
+                .filter(new LoggingWebClientFilter())
+                .build();
+
+    }
+
 
 
     @Retryable(

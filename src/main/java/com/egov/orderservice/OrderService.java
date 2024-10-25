@@ -1,7 +1,6 @@
 package com.egov.orderservice;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,6 +30,10 @@ public class OrderService {
 
     public List<PurchaseOrder> getAllOrders(){
         return orderRepository.findAll();
+    }
+
+    public PurchaseOrder getOrder(Integer orderId){
+        return orderRepository.findById(orderId).orElseThrow(() -> new RuntimeException("Order not found"));
     }
 
 

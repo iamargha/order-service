@@ -1,6 +1,7 @@
 package com.egov.orderservice;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,6 +9,7 @@ import java.util.Date;
 import java.util.UUID;
 @NoArgsConstructor
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PaymentEvent implements Event{
 
     private UUID eventId=UUID.randomUUID();

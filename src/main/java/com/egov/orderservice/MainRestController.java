@@ -22,9 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@Tag(name = "Social Service", description = "Social Service APIs")
-@RestController
-@RequestMapping("/api/v1")
+//@Tag(name = "Social Service", description = "Social Service APIs")
+//@RestController
+//@RequestMapping("/api/v1")
 public class MainRestController {
 
     private static final Logger log = LoggerFactory.getLogger(MainRestController.class);
@@ -208,7 +208,7 @@ public class MainRestController {
              {
                  return ResponseEntity.ok().body(response);
              }
-            //return ResponseEntity.ok().body("Social-Service-STEP-2-IN-PROGRESS");
+            //return Res    ponseEntity.ok().body("Social-Service-STEP-2-IN-PROGRESS");
         }
     }
 
